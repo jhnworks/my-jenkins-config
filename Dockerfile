@@ -1,4 +1,4 @@
-FROM jenkins:2.263.4-lts-centos7
+FROM jenkins/jenkins:latest 
 MAINTAINER JG <jhnworks@gmail.com>
 
 #docker pull jenkins/jenkins:2.263.4-lts-centos7
