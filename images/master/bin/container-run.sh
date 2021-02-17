@@ -8,5 +8,6 @@ docker run \
     -v $(which docker):/usr/bin/docker \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v /root/workspace \
+    --privileged \
     jenkins-master &&\
     docker logs -f jenkins-master;
