@@ -8,7 +8,7 @@ docker build --no-cache -t jenkins-master .;
 if [[ "${?}" != 0 ]]; then
     exit_code=1;
 fi;
-
+#docker tag $(docker image ls | grep "jenkins" | awk '{print $3}') jenkins-master
 #rm -r ./keys;
 
 exit $((exit_code));
