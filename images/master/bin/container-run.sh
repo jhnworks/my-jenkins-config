@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
 docker run \
+    -u 0 \
+    --privileged \
     -d \
     --name jenkins-master \
-    -p 8080:8080 \
+    -p 8088:8080 \
     -p 50000:50000 \
     -v $(which docker):/usr/bin/docker \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    -v /root/workspace \
-    --privileged \
-    jenkins-master &&\
-    docker logs -f jenkins-master;
+    -v /mnt/c/Spring:/var/jenkins_home \
+    jenkins/jenkins:latest &&\
+    docker logs -f jenkins-master &&;
